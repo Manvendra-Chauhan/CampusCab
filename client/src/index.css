@@ -1,0 +1,242 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap');
+
+/* Custom Global Styling with Theme Variables */
+:root {
+  --bg-color: #f8fafc;
+  --card-bg: rgba(255, 255, 255, 0.9);
+  --card-border: rgba(226, 232, 240, 0.8);
+  --text-color: #0f172a;
+  --text-muted: #64748b;
+  --border-color: #e2e8f0;
+  --primary: #4f46e5;
+  --primary-hover: #4338ca;
+  --secondary: #10b981;
+  --accent: #f59e0b;
+  --accent-rgb: 245, 158, 11;
+  --danger: #ef4444;
+  --shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.05), 0 8px 10px -6px rgba(0, 0, 0, 0.05);
+  --transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+  --glass-blur: blur(16px);
+  --card-subtle-bg: #f1f5f9;
+}
+
+body.dark-theme {
+  --bg-color: #090d16;
+  --card-bg: rgba(17, 24, 39, 0.85);
+  --card-border: rgba(255, 255, 255, 0.06);
+  --text-color: #f8fafc;
+  --text-muted: #94a3b8;
+  --border-color: #1f2937;
+  --primary: #6366f1;
+  --primary-hover: #4f46e5;
+  --secondary: #34d399;
+  --accent: #fbbf24;
+  --accent-rgb: 251, 191, 36;
+  --danger: #f87171;
+  --shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.4), 0 8px 10px -6px rgba(0, 0, 0, 0.4);
+  --card-subtle-bg: #111827;
+}
+
+
+body {
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  font-family: 'Outfit', 'Plus Jakarta Sans', sans-serif;
+  transition: var(--transition);
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+}
+
+/* Glassmorphism Styles */
+.glass-card {
+  background: var(--card-bg);
+  backdrop-filter: var(--glass-blur);
+  -webkit-backdrop-filter: var(--glass-blur);
+  border: 1px solid var(--card-border);
+  border-radius: 16px;
+  box-shadow: var(--shadow);
+  transition: var(--transition);
+}
+
+.glass-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 40px -10px rgba(0, 0, 0, 0.15);
+}
+
+/* Navbar Enhancements */
+.navbar-custom {
+  background: var(--card-bg);
+  backdrop-filter: var(--glass-blur);
+  border-bottom: 1px solid var(--card-border);
+  box-shadow: var(--shadow);
+  transition: var(--transition);
+}
+
+.nav-link-custom {
+  color: var(--text-color) !important;
+  font-weight: 500;
+  padding: 0.5rem 1rem !important;
+  border-radius: 8px;
+  transition: var(--transition);
+}
+
+.nav-link-custom:hover, .nav-link-custom.active {
+  background-color: rgba(99, 102, 241, 0.1);
+  color: var(--primary) !important;
+}
+
+/* Custom Buttons */
+.btn-primary-custom {
+  background-color: var(--primary);
+  border: none;
+  color: #fff;
+  padding: 0.6rem 1.5rem;
+  border-radius: 10px;
+  font-weight: 600;
+  box-shadow: 0 4px 14px 0 rgba(79, 70, 229, 0.3);
+  transition: var(--transition);
+}
+
+.btn-primary-custom:hover {
+  background-color: var(--primary-hover);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px 0 rgba(79, 70, 229, 0.4);
+}
+
+.btn-secondary-custom {
+  background-color: var(--secondary);
+  border: none;
+  color: #fff;
+  padding: 0.6rem 1.5rem;
+  border-radius: 10px;
+  font-weight: 600;
+  box-shadow: 0 4px 14px 0 rgba(16, 185, 129, 0.3);
+  transition: var(--transition);
+}
+
+.btn-secondary-custom:hover {
+  background-color: #059669;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px 0 rgba(16, 185, 129, 0.4);
+}
+
+/* Hero Section Gradients */
+.hero-gradient {
+  background: linear-gradient(135deg, rgba(79, 70, 229, 0.1) 0%, rgba(16, 185, 129, 0.05) 100%);
+  border-bottom: 1px solid var(--border-color);
+}
+
+/* Map Containers */
+.leaflet-map-container {
+  height: 400px;
+  width: 100%;
+  border-radius: 16px;
+  border: 1px solid var(--border-color);
+  box-shadow: var(--shadow);
+  z-index: 1;
+}
+
+/* Custom Forms */
+.form-control-custom {
+  background-color: rgba(255, 255, 255, 0.05);
+  border: 1px solid var(--border-color);
+  color: var(--text-color);
+  border-radius: 10px;
+  padding: 0.75rem 1rem;
+  transition: var(--transition);
+}
+
+body.dark-theme .form-control-custom {
+  background-color: rgba(15, 23, 42, 0.6);
+}
+
+.form-control-custom:focus {
+  background-color: var(--card-bg);
+  border-color: var(--primary);
+  color: var(--text-color);
+  box-shadow: 0 0 0 4px rgba(99, 102, 241, 0.15);
+}
+
+/* Dark Mode Toggle Switch */
+.theme-toggle-btn {
+  background: none;
+  border: none;
+  color: var(--text-color);
+  font-size: 1.25rem;
+  cursor: pointer;
+  padding: 0.5rem;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: var(--transition);
+}
+
+.theme-toggle-btn:hover {
+  background-color: rgba(255, 255, 255, 0.15);
+}
+
+/* Custom Toast Alerts */
+.toast-container-custom {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  z-index: 9999;
+}
+
+.toast-custom {
+  background: var(--card-bg);
+  backdrop-filter: var(--glass-blur);
+  border-left: 5px solid var(--primary);
+  color: var(--text-color);
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.12);
+  border-radius: 8px;
+  padding: 1rem 1.5rem;
+  margin-top: 10px;
+  display: flex;
+  align-items: center;
+  animation: slideIn 0.3s ease;
+}
+
+@keyframes slideIn {
+  from {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+/* Status Badges */
+.badge-status {
+  padding: 0.5em 0.8em;
+  border-radius: 9999px;
+  font-weight: 600;
+  font-size: 0.75rem;
+}
+
+.badge-searching { background-color: rgba(245, 158, 11, 0.15); color: var(--accent); }
+.badge-assigned { background-color: rgba(79, 70, 229, 0.15); color: var(--primary); }
+.badge-arriving { background-color: rgba(99, 102, 241, 0.15); color: #818cf8; }
+.badge-started { background-color: rgba(59, 130, 246, 0.15); color: #3b82f6; }
+.badge-completed { background-color: rgba(16, 185, 129, 0.15); color: var(--secondary); }
+.badge-cancelled { background-color: rgba(239, 68, 68, 0.15); color: var(--danger); }
+
+/* Custom Sub-card details that adapt to theme state */
+.card-subtle {
+  background-color: var(--card-subtle-bg);
+  border: 1px solid var(--border-color);
+  color: var(--text-color);
+  transition: var(--transition);
+}
+
+/* Global utility overrides for high contrast themes */
+.text-muted {
+  color: var(--text-muted) !important;
+}
+
