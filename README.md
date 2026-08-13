@@ -1,4 +1,4 @@
-# Campus Cab 🛺
+# Campus Cab
 
 An eco-friendly e-rickshaw booking platform designed for university campuses. Built with the MERN stack (MongoDB, Express, React, Node.js), Leaflet maps for OpenStreetMap routing, and Socket.IO for real-time tracking.
 
@@ -36,22 +36,6 @@ An eco-friendly e-rickshaw booking platform designed for university campuses. Bu
 - **Backend**: Node.js, Express.js, MongoDB (Mongoose), Socket.IO, JWT, bcryptjs, Dotenv, Cors.
 
 ---
-
-## 📋 Predefined Campus Locations (Thapar University center)
-
-- Main Gate
-- Hostel H
-- Hostel J
-- Hostel C
-- COS
-- Library
-- Admin Block
-- Auditorium
-- Tan Building
-- G Block
-- Sports Complex
-- Student Activity Center
-- Cafeteria
 
 ---
 
